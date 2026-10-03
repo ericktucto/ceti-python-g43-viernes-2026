@@ -1,7 +1,9 @@
 # Evaluar la nota de alumno
 
 # 1) Pedir nota del alumno
-nota = int(input("Ingresa tu nota "))
+nota = int(
+    input("Ingresa tu nota ")
+)
 
 # 2) Dar mensaje de evaluacion
 if nota <= 11:

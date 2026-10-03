@@ -32,3 +32,4 @@ mensaje = "Hola que tal " + nombre + "?"
 print(mensaje)
 
 print(f"Hola que tal {nombre}?")
+print(f"Tengo {edad} años")

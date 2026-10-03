@@ -18,10 +18,11 @@ print("OPERADORES COMPARACION")
 print("-" * 25)
 
 print(numero1 == numero2)
-print(numero1 == "30")
+print("numero1 == '30'", numero1 == "30")
 print(numero1 == 30)
 print(numero1 >= 18)
 print(numero2 >= 18)
+print(numero2 <= 18)
 
 numero2 = 18
 
@@ -44,7 +45,7 @@ activo = True
 # la ficha llenada pueden usar la piscina
 edad_alumno = 16
 ficha_llenada = True
-edad_necesaria = edad_alumno >= 15
+edad_necesaria = edad_alumno > 15
 
 print(edad_necesaria and ficha_llenada)
 
