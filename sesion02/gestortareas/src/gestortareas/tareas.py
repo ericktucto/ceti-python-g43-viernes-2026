@@ -1,10 +1,28 @@
 ARCHIVO = 'tareas.txt'
 
 def agregar_tarea(tareas, texto):
-    pass
+    tareas.append({
+        "texto": texto,
+        "hecha": False
+    })
 
-def marcar_completada(index, tareas):
-    pass
+def listar_tareas(tareas):
+    """
+        1 [ ] <texto>
+        2 [x] <texto>
+    """
+    contador = 1
+    print("-" * 25)
+    for tarea in tareas:
+        brackets = "[x]" if tarea["hecha"] else "[ ]"
+        print(f"{contador}) {brackets} {tarea['texto']}")
+        contador += 1
+    print("-" * 25)
+
+def marcar_completada(opcion, tareas):
+    tareas[opcion - 1]["hecha"] = True
+    texto = tareas[opcion - 1]["texto"]
+    print(f"Tu tarea '{texto}' fue marcada como completada")
 
 
 def cargar_tareas():
