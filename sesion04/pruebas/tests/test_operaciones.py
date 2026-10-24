@@ -1,7 +1,6 @@
 from pruebas.producto import Producto
-from pruebas.operaciones import total
+from pruebas.operaciones import total, sumar, dividir
 import pytest
-from pruebas.operaciones import sumar
 
 def test_suma():
     assert sumar(7, 5) == 12
@@ -19,3 +18,12 @@ def productos():
 
 def test_total(productos: list[Producto]):
     assert total(productos) == 200
+
+
+def test_division_exacta():
+    assert dividir(10, 5) == 2.0
+
+
+def test_division_cero():
+    with pytest.raises(ZeroDivisionError):
+        dividir(10, 0)
