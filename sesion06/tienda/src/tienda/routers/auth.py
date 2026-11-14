@@ -1,3 +1,4 @@
+from tienda.jwt import encode
 from tienda.hashing import pwd
 from tienda.schemas.inputs.auth import LoginUsuario
 from tienda.repositories.usuario import UsuarioRepository
@@ -38,7 +39,10 @@ def login(datos_usuario: LoginUsuario, session: SessionDep):
     if checked is False:
         raise HTTPException(status_code=422, detail="Credenciales invalidas")
 
+    token = encode({
+        "usuario_id": usuario.id
+    })
+
     return {
-        "nombre": usuario.nombre,
-        "email": usuario.email,
+        "token": token,
     }

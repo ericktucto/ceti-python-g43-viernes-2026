@@ -1,10 +1,12 @@
+from os import getenv
 from fastapi import Depends
 from typing import Annotated
 from sqlmodel import create_engine, Session, SQLModel
 
 
 # DATABASE_URL = "postgresql://<user>:<password>@<ip>:<port>/<database>"
-DATABASE_URL = "postgresql://erick:1234@localhost:5432/tienda"
+# DATABASE_URL = "postgresql://erick:1234@localhost:5432/tienda"
+DATABASE_URL = getenv('DATABASE_URL')
 
 engine = create_engine(
     DATABASE_URL

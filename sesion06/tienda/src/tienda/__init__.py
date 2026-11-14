@@ -1,3 +1,7 @@
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from tienda.db import crear_tablas
 from tienda.schemas.outputs.usuario import UsuarioBasico
 from tienda.entities import Usuario

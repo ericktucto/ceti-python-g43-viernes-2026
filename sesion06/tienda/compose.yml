@@ -9,4 +9,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ./datos:/var/lib/postgresql/data:rw
+      - postgres_tienda:/var/lib/postgresql/data
+
+volumes:
+  postgres_tienda:
