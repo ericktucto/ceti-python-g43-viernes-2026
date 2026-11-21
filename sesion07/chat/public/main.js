@@ -128,17 +128,17 @@ btnLogin.addEventListener("click", async () => {
             "Accept": "application/json"
         },
         body: JSON.stringify({ email, password })
-    }).then(d.json())
-    .then(data => {
-        console.log("Hola")
-        token = data.token
+    }).then(d => d.json())
+        .then(data => {
+            console.log("Hola")
+            token = data.token
 
-        loginCard.classList.add('hidden')
-        joinCard.classList.remove('hidden')
-    }).catch((e) => {
-        console.log("hola mundo")
-        console.error(e)
-    })
+            loginCard.classList.add('hidden')
+            joinCard.classList.remove('hidden')
+        }).catch((e) => {
+            console.log("hola mundo")
+            console.error(e)
+        })
 })
 
 /* ---------------------- Unirse a la sala -------------------------- */

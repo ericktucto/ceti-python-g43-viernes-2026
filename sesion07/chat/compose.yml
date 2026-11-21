@@ -1,0 +1,14 @@
+services:
+  basededatos:
+    image: postgres:17
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: chat
+      POSTGRES_USER: erick
+      POSTGRES_PASSWORD: 1234
+    ports:
+      - 5433:5432
+    volumes:
+      - postgres_chat_data:/var/lib/postgresql/data
+volumes:
+  postgres_chat_data:
